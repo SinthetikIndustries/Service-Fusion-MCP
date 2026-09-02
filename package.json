@@ -5,13 +5,13 @@
   "type": "module",
   "main": "build/index.js",
   "bin": {
-    "service-fusion-mcp": "./build/index.js"
+    "service-fusion-mcp": "build/index.js"
   },
   "author": "Sinthetix",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/SinthetikIndustries/Service-Fusion-MCP.git"
+    "url": "git+https://github.com/SinthetikIndustries/Service-Fusion-MCP.git"
   },
   "keywords": [
     "mcp",
