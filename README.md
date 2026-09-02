@@ -85,6 +85,10 @@ Tests run fully offline against mocked HTTP responses (`undici`'s `MockAgent`) â
 
 Read/create only. The Service Fusion API documents no update or delete operation on any resource, so this server exposes none. See [`service-fusion-api-reference.md`](./service-fusion-api-reference.md) for the underlying API reference this implementation was built against.
 
+## Support
+
+If this saved you some time, you can buy me a coffee on Cash App: [$Sinthetix](https://cash.app/$Sinthetix)
+
 ## License
 
 [MIT](./LICENSE)
