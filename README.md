@@ -21,6 +21,8 @@ Built and maintained by [Sinthetix](https://github.com/SinthetikIndustries).
 
 ## Installation
 
+Published on npm as [`@sinthetixai/service-fusion-mcp`](https://www.npmjs.com/package/@sinthetixai/service-fusion-mcp) — no clone/build needed, `npx` fetches and runs it on demand. Alternatively, clone and build from source:
+
 ```bash
 git clone https://github.com/SinthetikIndustries/Service-Fusion-MCP.git
 cd Service-Fusion-MCP
@@ -34,6 +36,13 @@ Edit `.env` and set `SF_CLIENT_ID` and `SF_CLIENT_SECRET` from your Service Fusi
 ## Configuration
 
 ### Claude Code
+
+```bash
+claude mcp add service-fusion npx @sinthetixai/service-fusion-mcp \
+  -e SF_CLIENT_ID=your_client_id -e SF_CLIENT_SECRET=your_client_secret
+```
+
+Or, running from a local clone/build:
 
 ```bash
 claude mcp add service-fusion node /absolute/path/to/Service-Fusion-MCP/build/index.js \
@@ -56,8 +65,8 @@ Add a `service-fusion` entry under `mcpServers` (see [`claude_desktop_config.exa
 {
   "mcpServers": {
     "service-fusion": {
-      "command": "node",
-      "args": ["/absolute/path/to/Service-Fusion-MCP/build/index.js"],
+      "command": "npx",
+      "args": ["@sinthetixai/service-fusion-mcp"],
       "env": {
         "SF_CLIENT_ID": "your_client_id_here",
         "SF_CLIENT_SECRET": "your_client_secret_here"
@@ -67,11 +76,11 @@ Add a `service-fusion` entry under `mcpServers` (see [`claude_desktop_config.exa
 }
 ```
 
-On Windows, use a double-backslash path, e.g. `"C:\\Users\\you\\Service-Fusion-MCP\\build\\index.js"`. Restart Claude Desktop after saving — it spawns this server on demand, the same way Claude Code does; nothing runs in the background between sessions.
+Or, running from a local clone/build, replace `command`/`args` with `"node"` and `["/absolute/path/to/Service-Fusion-MCP/build/index.js"]` (see [`claude_desktop_config.example.json`](./claude_desktop_config.example.json)). On Windows, use a double-backslash path, e.g. `"C:\\Users\\you\\Service-Fusion-MCP\\build\\index.js"`. Restart Claude Desktop after saving — it spawns this server on demand, the same way Claude Code does; nothing runs in the background between sessions.
 
 ### Other MCP clients
 
-Any client that supports a local stdio MCP server works the same way: point it at `node /absolute/path/to/Service-Fusion-MCP/build/index.js` with `SF_CLIENT_ID` and `SF_CLIENT_SECRET` set in its environment.
+Any client that supports a local stdio MCP server works the same way: point it at `npx @sinthetixai/service-fusion-mcp` (or `node /absolute/path/to/Service-Fusion-MCP/build/index.js` from a local build) with `SF_CLIENT_ID` and `SF_CLIENT_SECRET` set in its environment.
 
 ## Testing
 

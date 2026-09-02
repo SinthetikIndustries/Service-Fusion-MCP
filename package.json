@@ -1,5 +1,5 @@
 {
-  "name": "service-fusion-mcp",
+  "name": "@sinthetixai/service-fusion-mcp",
   "version": "1.0.0",
   "description": "MCP server exposing the full documented Service Fusion REST API (stdio transport)",
   "type": "module",
@@ -19,11 +19,18 @@
     "service-fusion",
     "claude"
   ],
+  "files": [
+    "build",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
   "scripts": {
     "build": "tsc",
     "start": "node build/index.js",
     "dev": "tsc --watch",
-    "test": "node --import tsx --test \"test/**/*.test.ts\""
+    "test": "node --import tsx --test \"test/**/*.test.ts\"",
+    "prepublishOnly": "npm run build"
   },
   "engines": {
     "node": ">=18.0.0"
