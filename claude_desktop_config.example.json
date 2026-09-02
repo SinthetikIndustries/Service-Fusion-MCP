@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "service-fusion": {
+      "command": "node",
+      "args": ["/absolute/path/to/service-fusion-mcp/build/index.js"],
+      "env": {
+        "SF_CLIENT_ID": "your_client_id_here",
+        "SF_CLIENT_SECRET": "your_client_secret_here"
+      }
+    }
+  }
+}

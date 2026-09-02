@@ -1,0 +1,42 @@
+{
+  "name": "service-fusion-mcp",
+  "version": "1.0.0",
+  "description": "MCP server exposing the full documented Service Fusion REST API (stdio transport)",
+  "type": "module",
+  "main": "build/index.js",
+  "bin": {
+    "service-fusion-mcp": "./build/index.js"
+  },
+  "author": "Sinthetix",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SinthetikIndustries/Service-Fusion-MCP.git"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "service-fusion",
+    "claude"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "start": "node build/index.js",
+    "dev": "tsc --watch",
+    "test": "node --import tsx --test \"test/**/*.test.ts\""
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "dotenv": "^16.4.0",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0",
+    "undici": "^7.2.0"
+  }
+}
